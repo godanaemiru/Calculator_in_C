@@ -163,7 +163,8 @@ int main()
     do
     {
         char choice;
-    printf("\n\n\n\n\n\n\n\n\n                                    Enter how many operands you would like to manipulate\n");
+    printf("                                                   CALCULATOR\n\n");
+    printf("                                   Enter how many operands you would like to manipulate\n");
     printf("                                     1.Two operands\n");
     printf("                                     2.Three operands\n");
     printf("                                     3.Read from a file\n");
