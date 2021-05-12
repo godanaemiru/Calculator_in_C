@@ -183,6 +183,7 @@ int read_from_file()
             printf("Invalid operation.\n");
         }
         printf("Result: %d %c %d  is %d", number1, ch, number2, result);
+        return 0;
         fclose(in_file);
     }
 
