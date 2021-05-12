@@ -44,6 +44,7 @@ int two_operands()
 
         case '^':
             result=pow(num1,num2);
+            break;
         default:
             printf("Invalid operation.\n");
     }
@@ -95,6 +96,7 @@ int three_operands()
             break;
         case '^':
             result=pow(num1,num2);
+            break;
         default:
             printf("Invalid operation.\n");
     }
@@ -124,6 +126,7 @@ int three_operands()
             break;
         case '^':
             result=pow(result,num2);
+            break;
         default:
             printf("Invalid operation.\n");
     }
@@ -134,28 +137,56 @@ int three_operands()
 
 int read_from_file()
 {
-   char ch, file_name[25];
-   FILE *fp;
+   char ch;
+   float result;
+   FILE *in_file;
+    int number1, number2, sum;
 
-   printf("Enter name of a file you wish to see\n");
-   gets(file_name);
+    printf("Choose operation to perform (+,-,*,/,%,^): ");
+    scanf("%c", &ch);
+    in_file = fopen("file.txt", "r");
+        printf("test");
+        fscanf(in_file, "%d", &number1);
+        fscanf(in_file, "%d", &number2);
 
-   /*fp = fopen(file_name, "r"); // read mode
+        switch(ch)
+        {
+            case '+':
+            result=number1+number2;
+            printf("Result: %d %c %d  is %d", number1, ch, number2, result);
+            break;
 
-   if (fp == NULL)
-   {
-      perror("Error while opening the file.\n");
-      exit(EXIT_FAILURE);
-   }
+        case '-':
+            result=number1-number2;
+            printf("Result: %d %c %d  is %d", number1, ch, number2, result);
+            break;
 
-   printf("The contents of %s file are:\n", file_name);
+        case '*':
+            result=number1*number2;
+            printf("Result: %d %c %d  is %d", number1, ch, number2, result);
+            break;
 
-   while((ch = fgetc(fp)) != EOF)
-      printf("%c", ch);
+        case '/':
+            result=(float)number1/(float)number2;
+            printf("Result: %d %c %d  is %d", number1, ch, number2, result);
+            break;
 
-   fclose(fp);
-   return 0;*/
-}
+        case '%':
+            result=number1%number2;
+            printf("Result: %d %c %d  is %d", number1, ch, number2, result);
+            break;
+        case '^':
+            result=pow(number1,number2);
+            printf("Result: %d %c %d  is %d", number1, ch, number2, result);
+            break;
+        default:
+            printf("Invalid operation.\n");
+        }
+        printf("Result: %d %c %d  is %d", number1, ch, number2, result);
+        fclose(in_file);
+    }
+
+
 int main()
 {
 
@@ -164,13 +195,14 @@ int main()
     {
         char choice;
     printf("                                                   CALCULATOR\n\n");
-    printf("                                   Enter how many operands you would like to manipulate\n");
+    printf("                                ***Enter how many operands you would like to manipulate***\n");
     printf("                                     1.Two operands\n");
     printf("                                     2.Three operands\n");
     printf("                                     3.Read from a file\n");
     printf("Enter choice:\n");
     scanf("%c",&choice);
 
+    char ch;
     switch(choice)
     {
             case '1':
@@ -180,6 +212,8 @@ int main()
                 three_operands();
                 break;
             case '3':
+                printf("Choose operation to perform (+,-,*,/,%,^): ");
+                scanf("%c", &ch);
                 read_from_file();
                 break;
             default:
