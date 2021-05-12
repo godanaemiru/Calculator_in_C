@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1620835616 source:d:\ppl_calculator\ppl_calculator.c
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+
