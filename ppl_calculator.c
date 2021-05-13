@@ -214,5 +214,5 @@ int main()
                 printf("Invalid operation.\n");
     }
     } while (ch2 != 'n');
-
+    getchar();
 }

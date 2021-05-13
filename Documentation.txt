@@ -1,0 +1,3 @@
+Algorithm_of_the_calculator
+
+link to github repository: https://github.com/godanaemiru/Calculator_in_C
