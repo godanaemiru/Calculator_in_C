@@ -138,14 +138,13 @@ int three_operands()
 int read_from_file()
 {
    char ch;
-   float result;
+   int result;
    FILE *in_file;
     int number1, number2, sum;
 
     printf("Choose operation to perform (+,-,*,/,%,^): ");
     scanf("%c", &ch);
     in_file = fopen("file.txt", "r");
-        printf("test");
         fscanf(in_file, "%d", &number1);
         fscanf(in_file, "%d", &number2);
 
@@ -153,36 +152,30 @@ int read_from_file()
         {
             case '+':
             result=number1+number2;
-            printf("Result: %d %c %d  is %d", number1, ch, number2, result);
             break;
 
         case '-':
             result=number1-number2;
-            printf("Result: %d %c %d  is %d", number1, ch, number2, result);
             break;
 
         case '*':
             result=number1*number2;
-            printf("Result: %d %c %d  is %d", number1, ch, number2, result);
             break;
 
         case '/':
             result=(float)number1/(float)number2;
-            printf("Result: %d %c %d  is %d", number1, ch, number2, result);
             break;
 
         case '%':
             result=number1%number2;
-            printf("Result: %d %c %d  is %d", number1, ch, number2, result);
             break;
         case '^':
             result=pow(number1,number2);
-            printf("Result: %d %c %d  is %d", number1, ch, number2, result);
             break;
         default:
             printf("Invalid operation.\n");
         }
-        printf("Result: %d %c %d  is %d", number1, ch, number2, result);
+        printf("Result: %d %c %d  is %d\n", number1, ch, number2, result);
         return 0;
         fclose(in_file);
     }
