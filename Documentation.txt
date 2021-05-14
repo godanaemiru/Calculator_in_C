@@ -1,3 +1,11 @@
-Algorithm_of_the_calculator
 
 link to github repository: https://github.com/godanaemiru/Calculator_in_C
+
+Algorithm_of_the_calculator
+
+*run proram 
+*Menu opens
+*choose number of operators you would like to manipulate
+*enter operands
+*choose operation
+*Receive result
